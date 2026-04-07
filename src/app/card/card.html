@@ -1,1 +1,15 @@
 <p>card works!</p>
+
+<button routerLink="/users/create">create new user</button>
+
+@if (usersListFromHttpClient | async; as users) {
+    @for (user of users; track $index) {
+        <section>
+        <p>user id: {{user.id}}</p>
+        <p>user name: {{user.name}}</p>
+        </section>
+        <button routerLink="/cards/{{user.id}}">details</button>
+    }
+}
+<button (click)="printFetchList()">printing data from fetch</button>
+<button (click)="printHttpList()">print data from httpclient</button>
