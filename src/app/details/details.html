@@ -1,0 +1,7 @@
+<h4>Details page</h4>
+
+@if (user | async; as user) {
+    <p>User ID: {{user.id}}</p>
+    <p>User name: {{user.name}}</p>
+}
+<button (click)="myFunc()">call to func</button>
